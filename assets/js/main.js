@@ -122,3 +122,29 @@ sr.reveal('.home__perfil, .about__image',{origin: 'right'})
 sr.reveal('home__name, .home__info,.about__container, .section__title_1, .section__title_2, .about__info,' +
     '.contact__social, .contact__data' , {origin: 'left'})
 sr.reveal('.service__card, .project__card',{interval: 100})
+
+
+
+// Cursor
+
+const cursor = document.querySelector(".cursor");
+var timeout;
+
+document.addEventListener("mousemove", (e) => {
+    let x = e.pageX;
+    let y = e.pageY;
+    cursor.style.top = y + "px";
+    cursor.style.left = x + "px";
+    cursor.style.display = "block";
+
+    function mouseStopped() {
+        cursor.style.display = "none";
+    }
+
+    clearTimeout(timeout);
+    timeout = setTimeout(mouseStopped, 50000);
+});
+
+document.addEventListener("mouseout", () => {
+    cursor.style.display = "none";
+});
