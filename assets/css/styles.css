@@ -516,6 +516,25 @@ body.dark-theme{
   background-color: var(--black-color);
 }
 
+.social__name {
+  position: absolute;
+  top: 100%;
+  margin-left: 10px;
+  opacity: 0;
+  visibility: hidden;
+  white-space: nowrap;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+}
+
+.home__social-link:hover .social__name {
+  opacity: 1;
+  visibility: visible;
+}
+
+
 .home__info{
   margin-top: 4rem;
 }
@@ -615,6 +634,10 @@ body.dark-theme{
 
 .button__ghost:hover{
   border: 3px solid var(--first-color);
+}
+.button__ghost:hover .social__name {
+  opacity: 1;
+  visibility: visible;
 }
 
 
